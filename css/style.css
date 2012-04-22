@@ -1,0 +1,24 @@
+body{
+	background-color:dimgrey;
+	font-family:arial, sans-serif;
+	text-align:center;	
+}
+
+div#wrap{
+	width:760 px;
+	margin:0 auto;
+	text-align:left;
+}
+
+div#logo{
+	float:left;
+}
+
+ul#nav{
+	display:inline;
+	li{
+		display:inline;
+		text-decoration:none;
+		color:white;
+	}
+}
