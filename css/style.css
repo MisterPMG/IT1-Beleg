@@ -1,35 +1,17 @@
-body{
-	font-family:arial, sans-serif;
+li {
+        list-style: none;
+        display: inline;
+        padding-right: 20px;
 }
 
-div#wrap{
-	width: 760 px;
-	min-height: 800 px;
-	margin: 0 auto;
-	text-align: left;
+ul {
+        padding-left: 0;
 }
 
-div .header-container{
-	background-color: black;
-	heigth:150 px;
-	color: white;
-	font-size: 1 em;
+header {
+        background: #C0C0C0;
 }
 
-nav{
-	float:right;
-}
-
-ul[id="nav"] > li{
-	display:inline;
-	text-decoration:none;
-	padding:auto;
-	color: white;
-	font-size:3 em;
-}
-
-fieldset#searchbox{
-	width:300 px;
-	padding:5 px;
-	border:1 px dashed dimgrey;
+table#anlegen {
+         width: 300px;
 }
