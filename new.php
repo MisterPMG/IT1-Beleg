@@ -23,7 +23,7 @@
                          $dbh = new PDO($dir) or die ("cannot open database");
 
                          $query_anrede = "SELECT * FROM anrede";
-                         $option_anrede = '<select>'."\n";
+                         $option_anrede = '<select name="Anrede">'."\n";
                          foreach ($dbh->query($query_anrede) as $row)
                          {
                                  $option_anrede.= '<option value='.$row[0].'>'.$row[1]. '</opiton>'."\n";
@@ -31,7 +31,7 @@
                          $option_anrede .="</select>\n";
 
                          $query_branche = "SELECT * FROM branche";
-                         $option_branche = '<select>'."\n";
+                         $option_branche = '<select name="Branche">'."\n";
                          foreach ($dbh->query($query_branche) as $row)
                          {
                                  $option_branche.= '<option value='.$row[0].'>'.$row[1]. '</opiton>'."\n";
@@ -39,7 +39,7 @@
                          $option_branche .="</select>\n";
 
                          $query_zeit = "SELECT * FROM zeitraum";
-                         $option_zeit = '<select>'."\n";
+                         $option_zeit = '<select name="Zeitraum">'."\n";
                          foreach ($dbh->query($query_zeit) as $row)
                          {
                                  $option_zeit.= '<option value='.$row[0].'>'.$row[1]. '</opiton>'."\n";
@@ -48,7 +48,7 @@
         ?>
 
         <div>
-                 <form action="detail.php">
+                 <form action="insert.php" method="POST" >
 
                          <table id="anlegen">
                           <tr>
@@ -97,7 +97,7 @@
                           </tr>
                           <tr>
                            <td><label for="position">Position</label></td>
-                           <td><input type="text" name="Postion" id="position" />  </td>
+                           <td><input type="text" name="Position" id="position" />  </td>
                           </tr>
                           <tr>
                            <td><label for="abteilung">Abteilung</label></td>
