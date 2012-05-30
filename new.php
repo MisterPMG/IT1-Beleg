@@ -17,13 +17,43 @@
                 </nav>
         </header>
 
+        <!--Script für die Dropdownfelder...-->
+        <?php
+                         $dir = 'sqlite:sqlite/database.db';
+                         $dbh = new PDO($dir) or die ("cannot open database");
+
+                         $query_anrede = "SELECT * FROM anrede";
+                         $option_anrede = '<select>'."\n";
+                         foreach ($dbh->query($query_anrede) as $row)
+                         {
+                                 $option_anrede.= '<option value='.$row[0].'>'.$row[1]. '</opiton>'."\n";
+                         }
+                         $option_anrede .="</select>\n";
+
+                         $query_branche = "SELECT * FROM branche";
+                         $option_branche = '<select>'."\n";
+                         foreach ($dbh->query($query_branche) as $row)
+                         {
+                                 $option_branche.= '<option value='.$row[0].'>'.$row[1]. '</opiton>'."\n";
+                         }
+                         $option_branche .="</select>\n";
+
+                         $query_zeit = "SELECT * FROM zeitraum";
+                         $option_zeit = '<select>'."\n";
+                         foreach ($dbh->query($query_zeit) as $row)
+                         {
+                                 $option_zeit.= '<option value='.$row[0].'>'.$row[1]. '</opiton>'."\n";
+                         }
+                         $option_zeit .="</select>\n";
+        ?>
+
         <div>
                  <form action="detail.php">
 
                          <table id="anlegen">
                           <tr>
                            <td>Anrede</td>
-                           <td><select><option value="herr">Herr</option><option value="frau">Frau</option><option value="blabla">BlaBla</option></select></td>
+                           <td><?php echo $option_anrede;?></td>
                           </tr>
                           <tr>
                            <td><label for="name">Name</label></td>
@@ -59,7 +89,7 @@
                           </tr>
                           <tr>
                            <td>Branche</td>
-                           <td><select><option value="Industrie">Industrie</option><option value="Dienstleistung">Dienstleistung</option><option value="blabla">BlaBla</option></select></td>
+                           <td><?php echo $option_branche;?></td>
                           </tr>
                           <tr>
                            <td><label for="www">Homepage</label></td>
@@ -75,7 +105,7 @@
                           </tr>
                           <tr>
                            <td>Zeitraum</td>
-                           <td><select><option value="von">von</option><option value="bis">bis</option><option value="blabla">BlaBla</option></select></td>
+                           <td><?php echo $option_zeit;?></td>
                           </tr>
                           <tr>
                            <td><label for="zusatz">Zusatz</label></td>
