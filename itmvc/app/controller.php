@@ -9,11 +9,11 @@
 	      $this->load = new Load();
 	      $this->model = new Model();
 
-	   }   
+	   }
 	   
-	   function ShowTestView()
+	   function ListAllClients()
 	   {
-	   		load.ShowView('times.php');
+	   		
 	   }
 	   
 	}

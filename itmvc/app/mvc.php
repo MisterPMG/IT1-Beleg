@@ -7,6 +7,5 @@
 	
 	$Controller = new Controller(); 
 	
-	$Controller->ShowTestView();
 
 ?>
