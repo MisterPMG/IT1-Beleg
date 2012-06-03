@@ -12,21 +12,21 @@
 			<!-- Beginn Navigation -->
 			<nav>
 				<ul>
-					<li><a href="index.php">Home / Suche</a></li>
-					<li><a href="index.php?View=ListAll">Anzeigen</a></li>
-					<li><a href="index.php?View=Create">Anlegen</a></li>
+					<li> <a href="index.php">Home / Suche</a> </li>
+					<li> <a href="index.php?View=ListAll">Anzeigen</a> </li>
+					<li> <a href="index.php?View=Create">Anlegen</a> </li>
 				</ul>
 			</nav>
 			<!-- Ende Navigation -->
 			
 		</header>
 		
+		<div>
 		<!-- Beginn dynamisch erzeugter Inhalt  -->
 		
 		<?php
 		
-			ini_set('display_errors', 1);
-			
+			ini_set('display_errors', 1);			
 			require 'app/mvc.php';
 			
 			// das hier unten ist noch nicht richtig, nur zu testzwecken...
@@ -42,7 +42,7 @@
 		?>
 		
 		<!-- Ende dynamisch erzeugter Inhalt -->
-		
+		</div>
 	</body>
 </html>
 	
