@@ -1,6 +1,6 @@
 <!-- ListAll -->
 
-<h1> Liste aller Kunden </h1>
+<h2> Liste aller Kunden </h2>
 
 <p>
 	<?php

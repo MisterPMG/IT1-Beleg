@@ -6,13 +6,13 @@
 
 	class Load {
 		
-	   function GetView( 
+	   	function GetView( 
 			$viewName, 			// View, die angezeigt werden soll (ohne .php)
 			$data = null 		// Daten, die die View benötigt
 			) 
-	   {
+	   	{
 			include 'views/' . $viewName . '.php';
-	   }
+		}
 	}
 
 ?>

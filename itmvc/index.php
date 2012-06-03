@@ -32,11 +32,12 @@
 			// das hier unten ist noch nicht richtig, nur zu testzwecken...
 			if( isset( $_GET['View'] ) )
 			{
-				$Controller->ListAllClients();
+				$Controller -> exec( $_GET[ 'View' ] );
 			}
 			else 
 			{
 				echo 'keine Parameter gefunden';
+				//$Controller -> exec( ... );
 			}
 		?>
 		
