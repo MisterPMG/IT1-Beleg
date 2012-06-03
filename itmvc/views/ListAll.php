@@ -1,9 +1,12 @@
-<!-- View Titel -->
+<!-- ListAll -->
 
-<h1> Hallo, ich bin eine View!!! </h1>
+<h1> Liste aller Kunden </h1>
 
-<?php
-
-	Controller->ListAll
-
-?>
+<p>
+	<?php
+		foreach ( $data as $row )
+		{
+			echo $row[0] . " " . $row[1] . "<br />" ;
+		}
+	?>
+</p>

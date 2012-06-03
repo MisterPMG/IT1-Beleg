@@ -20,7 +20,7 @@
         <div>
                 <?php
                          $dir = 'sqlite:sqlite/database.db';
-                         $dbh = new PDO($dir) or die ("cannot open database");
+                         $dbh = new PDO($dir); //or die ("cannot open database");
                          $query = "SELECT * FROM kunde";
                          foreach ($dbh->query($query) as $row)
                          {

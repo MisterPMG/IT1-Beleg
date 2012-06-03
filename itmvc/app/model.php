@@ -3,7 +3,7 @@
 	class Model 
 	{
 		#MEMBER
-		public $DBH;
+		private $DBH;
 	
 		#KONSTRUKTOR & DESTRUKTOR
 		function __construct()
@@ -11,11 +11,12 @@
 			try
 			{
 				//Verbindung zur Datenbank herstellen
-	            $DBH = new PDO("sqlite:sqlite/database.db");
+	            $this -> DBH = new PDO("sqlite:sqlite/database.db");
 			}
 			catch( PDOException $e ) 
 			{
-				
+				echo 'Fehler: Verbindung zu Datenbank fehlgeschlagen';
+				echo $e -> getMessage();
 			}
 		}
 		
@@ -25,9 +26,16 @@
 		}
 		
 		#METHODEN	
-	   public function myMethod()
-	   {
-			
-	   }
+	   	public function myMethod()
+	   	{
+	   		
+	   	}
+		
+	   	public function getAllClients()
+	   	{
+	   		$STH = $this -> DBH -> query( 'SELECT vorname, name FROM kunde' ); 
+	   		return $STH;
+	   	}
+	   
 	}
 ?>

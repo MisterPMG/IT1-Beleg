@@ -29,9 +29,10 @@
 			
 			require 'app/mvc.php';
 			
-			if( isset( $_POST ) )
+			// das hier unten ist noch nicht richtig, nur zu testzwecken...
+			if( isset( $_GET['View'] ) )
 			{
-				$Controller -> load -> GetView( $_POST['View'], $_POST );
+				$Controller->ListAllClients();
 			}
 			else 
 			{
