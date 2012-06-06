@@ -36,7 +36,8 @@
 			}
 			else 
 			{
-				echo 'keine Parameter gefunden';
+				
+				//echo 'keine Parameter gefunden';				
 				//$Controller -> exec( ... );
 			}
 		?>

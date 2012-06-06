@@ -33,7 +33,9 @@
 		
 	   	public function getAllClients()
 	   	{
-	   		$STH = $this -> DBH -> query( 'SELECT vorname, name FROM kunde' ); 
+	   		$STH = $this -> DBH -> prepare( 'SELECT vorname, name FROM kunde' );
+	   		$STH->execute();
+	   		 
 	   		return $STH;
 	   	}
 	   
