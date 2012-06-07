@@ -1,59 +1,14 @@
-<!DOCTYPE html>
-<html>
-<head>
-        <meta charset="utf-8">
-    <title>IT-Beleg: Addressverwaltung</title>
-    <link rel="stylesheet" href="css/style.css">
-</head>
-<body>
-        <header>
-                <h1>IT-Beleg</h1>
-                <nav>
-                        <ul>
-                                <li><a href="index.php">Suche</a></li>
-                                <li><a href="list.php">Anzeigen</a></li>
-                                <li><a href="#">Anlegen</a></li>
-                        </ul>
-                </nav>
-        </header>
+<!-- Create View -->
 
-        <!--Script für die Dropdownfelder...-->
-        <?php
-                         $dir = 'sqlite:sqlite/database.db';
-                         $dbh = new PDO($dir) or die ("cannot open database");
+<h2> Neuen Kunden Anlegen </h2>
 
-                         $query_anrede = "SELECT * FROM anrede";
-                         $option_anrede = '<select name="Anrede">'."\n";
-                         foreach ($dbh->query($query_anrede) as $row)
-                         {
-                                 $option_anrede.= '<option value='.$row[0].'>'.$row[1]. '</opiton>'."\n";
-                         }
-                         $option_anrede .="</select>\n";
-
-                         $query_branche = "SELECT * FROM branche";
-                         $option_branche = '<select name="Branche">'."\n";
-                         foreach ($dbh->query($query_branche) as $row)
-                         {
-                                 $option_branche.= '<option value='.$row[0].'>'.$row[1]. '</opiton>'."\n";
-                         }
-                         $option_branche .="</select>\n";
-
-                         $query_zeit = "SELECT * FROM zeitraum";
-                         $option_zeit = '<select name="Zeitraum">'."\n";
-                         foreach ($dbh->query($query_zeit) as $row)
-                         {
-                                 $option_zeit.= '<option value='.$row[0].'>'.$row[1]. '</opiton>'."\n";
-                         }
-                         $option_zeit .="</select>\n";
-        ?>
-
-        <div>
-                 <form action="insert.php" method="POST" >
+<p>
+      <form action="index.php" method="POST" >
 
                          <table id="anlegen">
                           <tr>
                            <td>Anrede</td>
-                           <td><?php echo $option_anrede;?></td>
+                           <td><?php $Controller->getAnrede(); ?></td>
                           </tr>
                           <tr>
                            <td><label for="name">Name</label></td>
@@ -89,7 +44,7 @@
                           </tr>
                           <tr>
                            <td>Branche</td>
-                           <td><?php echo $option_branche;?></td>
+                           <td><?php ?></td>
                           </tr>
                           <tr>
                            <td><label for="www">Homepage</label></td>
@@ -105,7 +60,7 @@
                           </tr>
                           <tr>
                            <td>Zeitraum</td>
-                           <td><?php echo $option_zeit;?></td>
+                           <td><?php ?></td>
                           </tr>
                           <tr>
                            <td><label for="zusatz">Zusatz</label></td>
@@ -118,8 +73,4 @@
 
 
                  </form>
-        </div>
-
-
-</body>
-</html>
+</p>
