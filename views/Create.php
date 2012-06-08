@@ -1,5 +1,16 @@
 <!-- Create View -->
+<?php
+	if( is_array($data)) {extract ($data);}
+	
+	$option_anrede = '<select name="Anrede">'."\n";
+    foreach ($anrede as $row)
+    {
+        $option_anrede.= '<option value='.$row[0].'>'.$row[1]. '</opiton>'."\n";
+    }
+    $option_anrede .="</select>\n";
+                         
 
+?>
 <h2> Neuen Kunden Anlegen </h2>
 
 <p>
@@ -8,7 +19,7 @@
                          <table id="anlegen">
                           <tr>
                            <td>Anrede</td>
-                           <td><?php $Controller->getAnrede(); ?></td>
+                           <td><?php echo $option_anrede; ?></td>
                           </tr>
                           <tr>
                            <td><label for="name">Name</label></td>

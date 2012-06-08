@@ -25,7 +25,7 @@
 		<!-- Beginn dynamisch erzeugter Inhalt  -->
 		
 		<?php
-		
+	
 			ini_set('display_errors', 1);			
 			require 'app/mvc.php';
 			

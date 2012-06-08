@@ -40,13 +40,12 @@
                    public function insertNewClient()
                    {
                            $STH = $this -> DBH -> query( 'SELECT vorname, name FROM kunde' );
-                           return $STH;
+                           $STH1 = $this -> DBH -> query('SELECT * FROM anrede');
+                           $result = array( 'kunde' => $STH, 
+											'anrede' => $STH1 );
+                           return $result;
                    }
 
-                   public function getAnredeDB()
-                   {
-                           $STH = $this -> DBH -> query( 'SELECT * FROM anrede' );
-                           return $STH;
-                   }
+         
         }
 ?>
