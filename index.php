@@ -15,6 +15,7 @@
 					<li> <a href="index.php">Home / Suche</a> </li>
 					<li> <a href="index.php?View=ListAll">Anzeigen</a> </li>
 					<li> <a href="index.php?View=Create">Anlegen</a> </li>
+					<li> <a href="index.php?View=Training">Schulungen</a> </li>
 				</ul>
 			</nav>
 			<!-- Ende Navigation -->
@@ -37,7 +38,7 @@
 			else 
 			{
 				
-				//echo 'keine Parameter gefunden';				
+				echo 'keine Parameter gefunden';				
 				//$Controller -> exec( ... );
 			}
 		?>

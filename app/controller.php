@@ -15,6 +15,7 @@
                            {
                                    case 'ListAll': $this -> ListAllClients();break;
                                    case 'Create': $this -> NewClient();break;
+                                   case 'Training': $this -> EditTraining();break;
                            }
                 }
 
@@ -34,6 +35,12 @@
                            	$STH = $this->model->insertNewClient();
                          	echo "Kunde wurde angelegt";                        	
                          }
+           }
+           
+           function EditTraining()
+           {
+           				$STH = $this-> model-> showDetail();
+           				$this->load->GetView('Training', $STH);
            }
 
         }

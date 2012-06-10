@@ -26,11 +26,7 @@
                 }
 
                 #METHODEN
-                   public function myMethod()
-                   {
-
-                   }
-
+        		   
                    public function getAllClients()
                    {
                            $STH = $this -> DBH -> query( 'SELECT vorname, name FROM kunde' );
