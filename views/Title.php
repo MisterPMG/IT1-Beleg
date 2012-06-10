@@ -3,6 +3,7 @@
 <h2> Liste aller Anreden </h2>
 
 <p>
+<form action="index.php?View=Title" method="POST">
 	<table>
 		<tr>
 			<th>Nr</th> <th>Anrede</th>
@@ -21,6 +22,12 @@
 				echo "Keine Ergebnisse vorhanden.";
 			}
 		?>
+		<tr>
+			<th><input type="submit" name="Anlegen" value="Anlegen" /></th>
+			<th><input type="text" name="Anrede" id="anrede" /></th>
+			<META HTTP-EQUIV="refresh" CONTENT="2">
+		</tr>	
 	
 	</table>
+</form>
 </p>

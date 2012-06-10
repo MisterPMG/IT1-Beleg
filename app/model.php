@@ -54,6 +54,20 @@
                         	return $STH;
                    }
                    
+                   public function insertTitle()
+                   {
+                   			$anrede=$_POST['Anrede'];
+                   			$STH = $this-> DBH -> query ("insert into anrede(anrede) values ('$anrede')");
+                   			return $STH;
+                   }
+                   
+                   public function insertBranche()
+                   {
+		                   	$branche=$_POST['Branche'];
+		                   	$STH = $this-> DBH -> query ("insert into branche(branche) values ('$branche')");
+		                   	return $STH;
+                   }
+                   
                    public function showDetail()
                    {
 		                   	$anrede = $this -> DBH -> query('SELECT * FROM anrede');

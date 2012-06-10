@@ -25,12 +25,23 @@
             {
             	$STH = $this-> model-> showDetail();
             	$this -> load ->GetView( 'Branche', $STH );
+            	if(isset($_POST['Anlegen']))
+            	{
+            		$STH = $this->model->insertBranche();
+            		echo "Branche wurde angelegt";
+ 
+            	}
             }    
            	
 			function EditTitle()
 			{
 				$STH = $this-> model-> showDetail();
 				$this -> load ->GetView( 'Title', $STH );
+				if(isset($_POST['Anlegen']))
+				{
+					$STH = $this->model->insertTitle();
+					echo "Anrede wurde angelegt";
+				}
 			}
                 
            function ListAllClients()
