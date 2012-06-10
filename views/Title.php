@@ -25,7 +25,7 @@
 		<tr>
 			<th><input type="submit" name="Anlegen" value="Anlegen" /></th>
 			<th><input type="text" name="Anrede" id="anrede" /></th>
-			<META HTTP-EQUIV="refresh" CONTENT="2">
+			
 		</tr>	
 	
 	</table>
