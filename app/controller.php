@@ -54,7 +54,6 @@
            {
                          $STH = $this-> model-> showDetail();
                          $this -> load ->GetView( 'Create', $STH );
-                         
                          if(isset($_POST['Anlegen']))
                          {
                            	$STH = $this->model->insertNewClient();
@@ -66,6 +65,11 @@
            {
            				$STH = $this-> model-> showDetail();
            				$this->load->GetView('Training', $STH);
+           				if(isset($_POST['Anlegen']))
+           				{
+           					$STH = $this->model->insertTraining();
+           					echo "Schulung wurde angelegt";
+           				}
            }
 
         }

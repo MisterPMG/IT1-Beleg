@@ -68,6 +68,15 @@
 		                   	return $STH;
                    }
                    
+                   public function insertTraining()
+                   {
+                   		$schulung=$_POST['Schulung'];
+                   		$von=$_POST['Von'];
+                   		$bis=$_POST['Bis'];
+                   		$STH = $this-> DBH -> query ("insert into zeitraum(von,bis,schulung) values ('$von','$bis','$schulung')");
+                   		return $STH;
+                   }
+                   
                    public function showDetail()
                    {
 		                   	$anrede = $this -> DBH -> query('SELECT * FROM anrede');
