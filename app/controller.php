@@ -18,8 +18,15 @@
                                    case 'Training': $this -> EditTraining();break;
                                    case 'Title': $this -> EditTitle();break;
                                    case 'Branche': $this -> EditBranche();break;
+                                   case 'Edit': $this -> EditClient();break;
                            }
                 }
+                
+            function EditClient()
+            {
+            	$STH = $this-> model-> showDetail();
+				$this -> load ->GetView( 'Edit', $STH ); 
+            }
 
             function EditBranche()
             {
