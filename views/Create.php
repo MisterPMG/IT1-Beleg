@@ -8,13 +8,25 @@
         $option_anrede.= '<option value='.$row[0].'>'.$row[1]. '</opiton>'."\n";
     }
     $option_anrede .="</select>\n";
-                         
-
+    
+    $option_branche = '<select name="Branche">'."\n";
+    foreach ($branche as $row)
+    {
+    	$option_branche.= '<option value='.$row[0].'>'.$row[1]. '</opiton>'."\n";
+    }
+    $option_branche .="</select>\n";
+    
+    $option_zeit = '<select name="Zeitraum">'."\n";
+    foreach ($zeit as $row)
+    {
+    	$option_zeit.= '<option value='.$row[0].'>'.$row[1]. '</opiton>'."\n";
+    }
+    $option_zeit .="</select>\n";
 ?>
 <h2> Neuen Kunden Anlegen </h2>
 
 <p>
-      <form action="index.php" method="POST" >
+      <form action="index.php?View=Create" method="POST" >
 
                          <table id="anlegen">
                           <tr>
@@ -55,7 +67,7 @@
                           </tr>
                           <tr>
                            <td>Branche</td>
-                           <td><?php ?></td>
+                           <td><?php echo $option_branche; ?></td>
                           </tr>
                           <tr>
                            <td><label for="www">Homepage</label></td>
@@ -71,14 +83,14 @@
                           </tr>
                           <tr>
                            <td>Zeitraum</td>
-                           <td><?php ?></td>
+                           <td><?php echo $option_zeit ?></td>
                           </tr>
                           <tr>
                            <td><label for="zusatz">Zusatz</label></td>
                            <td><input type="text" name="Zusatz" id="zusatz" /> </td>
                           </tr>
                           <tr>
-                           <td><input type="submit" value="Anlegen" /></td>
+                           <td><input type="submit" name="Anlegen" value="Anlegen" /></td>
                           </tr>
                          </table>
 

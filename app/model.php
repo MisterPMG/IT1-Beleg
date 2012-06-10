@@ -38,12 +38,36 @@
                    }
 
                    public function insertNewClient()
+                   {      
+		                   	$anrede=$_POST['Anrede'];
+		                   	$name=$_POST['Name'];
+		                   	$vorname=$_POST['Vorname'];
+		                   	$firma=$_POST['Firma'];
+		                   	$adresse=$_POST['Adresse'];
+		                   	$telefon=$_POST['Telefon'];
+		                   	$mobil=$_POST['Mobil'];
+		                   	$fax=$_POST['Fax'];
+		                   	$email=$_POST['Email'];
+		                   	$branche=$_POST['Branche'];
+		                   	$homepage=$_POST['www'];
+		                   	$position=$_POST['Position'];
+		                   	$abteilung=$_POST['Abteilung'];
+		                   	$zeitraum=$_POST['Zeitraum'];
+		                   	$zusatz=$_POST['Zusatz'];
+ 							$STH = $this -> DBH -> query( "insert into kunde(name,vorname,anrede,firma,adresse,telefon,mobil,fax,email,branche,homepage,position,abteilung,zeitraum,zusatz)values('$name','$vorname','$anrede','$firma','$adresse','$telefon','$mobil','$fax','$email','$branche','$homepage','$position','$abteilung','$zeitraum','$zusatz')");
+                        	return $STH;
+                   }
+                   
+                   public function showDetail()
                    {
-                           $STH = $this -> DBH -> query( 'SELECT vorname, name FROM kunde' );
-                           $STH1 = $this -> DBH -> query('SELECT * FROM anrede');
-                           $result = array( 'kunde' => $STH, 
-											'anrede' => $STH1 );
-                           return $result;
+		                   	$anrede = $this -> DBH -> query('SELECT * FROM anrede');
+		                   	$branche = $this -> DBH -> query('SELECT * FROM branche');
+		                   	$zeit = $this -> DBH -> query('SELECT * FROM zeitraum');
+		                   	$result = array('anrede' => $anrede,
+		                   					'branche' => $branche,
+		                   					'zeit' => $zeit
+		                   	);
+                   			return $result;
                    }
 
          

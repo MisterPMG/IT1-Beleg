@@ -26,10 +26,14 @@
 
            function NewClient()
            {
-           				 
-                         $STH = $this-> model-> insertNewClient();
-                         
+                         $STH = $this-> model-> showDetail();
                          $this -> load ->GetView( 'Create', $STH );
+                         
+                         if(isset($_POST['Anlegen']))
+                         {
+                           	$STH = $this->model->insertNewClient();
+                         	echo "Kunde wurde angelegt";                        	
+                         }
            }
 
         }
