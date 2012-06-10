@@ -1,20 +1,20 @@
-<!-- ListTraining -->
+<!-- ListTitle -->
 
-<h2> Liste aller Schulungen </h2>
+<h2> Liste aller Anreden </h2>
 
 <p>
 	<table>
 		<tr>
-			<th>Von</th> <th>Bis</th>
+			<th>Nr</th> <th>Anrede</th>
 		</tr>
 		<?php
 			
 			// Gute Methode
 			if( is_array($data)) {extract ($data);}
-			if( count( $zeit ) ) {
-				foreach ($zeit as $row) {
+			if( count( $anrede ) ) {
+				foreach ($anrede as $row) {
 					echo "<tr>";
-					echo "<td>" . $row[ 1 ] . "</td><td>" . $row[ 2 ] ."</td>";
+					echo "<td>" . $row[ 0 ] . "</td><td>" . $row[ 1 ] ."</td>";
 					echo "</tr>";
 				}
 			} else { 

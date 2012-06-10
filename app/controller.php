@@ -16,9 +16,23 @@
                                    case 'ListAll': $this -> ListAllClients();break;
                                    case 'Create': $this -> NewClient();break;
                                    case 'Training': $this -> EditTraining();break;
+                                   case 'Title': $this -> EditTitle();break;
+                                   case 'Branche': $this -> EditBranche();break;
                            }
                 }
 
+            function EditBranche()
+            {
+            	$STH = $this-> model-> showDetail();
+            	$this -> load ->GetView( 'Branche', $STH );
+            }    
+           	
+			function EditTitle()
+			{
+				$STH = $this-> model-> showDetail();
+				$this -> load ->GetView( 'Title', $STH );
+			}
+                
            function ListAllClients()
            {
                            $STH = $this-> model -> getAllClients();

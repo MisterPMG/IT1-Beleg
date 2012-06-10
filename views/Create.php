@@ -31,7 +31,7 @@
                          <table id="anlegen">
                           <tr>
                            <td>Anrede</td>
-                           <td><?php echo $option_anrede; ?></td>
+                           <td><?php echo $option_anrede; ?><a href="index.php?View=Title">neu</a></td>
                           </tr>
                           <tr>
                            <td><label for="name">Name</label></td>
@@ -67,7 +67,7 @@
                           </tr>
                           <tr>
                            <td>Branche</td>
-                           <td><?php echo $option_branche; ?></td>
+                           <td><?php echo $option_branche; ?><a href="index.php?View=Branche">neu</a></td>
                           </tr>
                           <tr>
                            <td><label for="www">Homepage</label></td>
