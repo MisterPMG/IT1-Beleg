@@ -1,0 +1,38 @@
+CREATE TABLE "anrede" (
+    "id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
+    "anrede" TEXT NOT NULL
+)
+
+CREATE TABLE "branche" (
+    "id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
+    "branche" TEXT NOT NULL
+)
+
+CREATE TABLE "zeitraum" (
+    "id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
+    "von" INTEGER NOT NULL,
+    "bis" INTEGER NOT NULL,
+    "schulung" TEXT NOT NULL
+)
+
+CREATE TABLE "kunde" (
+    "kunde_id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
+    "name" TEXT,
+    "vorname" TEXT,
+    "anrede" INTEGER,
+    "firma" TEXT,
+    "adresse" TEXT,
+    "telefon" TEXT,
+    "mobil" TEXT,
+    "fax" TEXT,
+    "email" TEXT,
+    "branche" INTEGER,
+    "homepage" TEXT,
+    "position" TEXT,
+    "abteilung" TEXT,
+    "zeitraum" INTEGER,
+    "zusatz" TEXT,
+    foreign key (anrede) references anrede(id),
+    foreign key (branche) references branche(id),
+    foreign key (zeitraum) references zeitraum(id)
+)

@@ -11,7 +11,7 @@
                         try
                         {
                                  //Verbindung zur Datenbank herstellen
-                                 $this -> DBH = new PDO("sqlite:sqlite/database.db");
+                                 $this -> DBH = new PDO("sqlite:sqlite/database.sqlite");
                         }
                         catch( PDOException $e )
                         {

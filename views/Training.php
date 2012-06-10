@@ -5,7 +5,7 @@
 <p>
 	<table>
 		<tr>
-			<th>Von</th> <th>Bis</th>
+			<th>Von</th> <th>Bis</th> <th>Schulung</th>
 		</tr>
 		<?php
 			
@@ -14,7 +14,7 @@
 			if( count( $zeit ) ) {
 				foreach ($zeit as $row) {
 					echo "<tr>";
-					echo "<td>" . $row[ 1 ] . "</td><td>" . $row[ 2 ] ."</td>";
+					echo "<td>" . $row[ 1 ] . "</td><td>" . $row[ 2 ] ."</td><td>". $row[3]. "</td>";
 					echo "</tr>";
 				}
 			} else { 
