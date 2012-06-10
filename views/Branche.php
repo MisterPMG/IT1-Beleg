@@ -2,32 +2,24 @@
 
 <h2> Liste aller Branchen </h2>
 
-<p>
 <form action="index.php?View=Branche" method="POST">
-	<table>
-		<tr>
-			<th>Nr</th> <th>Branche</th>
-		</tr>
+	<ul id="list">
+		<li class="head">
+			<div class="list_id">ID</div>
+			<div class="list_branche">Branche</div>
+		</li>
 		<?php
-			
-			// Gute Methode
 			if( is_array($data)) {extract ($data);}
-			if( count( $branche ) ) {
-				foreach ($branche as $row) {
-					echo "<tr>";
-					echo "<td>" . $row[ 0 ] . "</td><td>" . $row[ 1 ] ."</td>";
-					echo "</tr>";
-				}
-			} else { 
-				echo "Keine Ergebnisse vorhanden.";
+				if( count( $branche ) ) {
+					foreach ($branche as $row) {
+						echo "<li><div class=\"list_id\">". $row[0]."</div><div class=\"list_branche\">" . $row[1]. "</div></li>";}
+			} else {
+						echo "Keine Ergebnisse vorhanden.";
 			}
 		?>
-		<tr>
-			<th><input type="submit" name="Anlegen" value="Anlegen" /></th>
-			<th><input type="text" name="Branche" id="branche" /></th>
-		
-		</tr>	
-	
-	</table>
+		<li>
+			<div class="list_id"><input type="submit" name="Anlegen" value="Anlegen" /></div>
+			<div class="list_branche"><input type="text" name="Branche" id="branche" /></div>
+		</li>
+	</ul>
 </form>
-</p>

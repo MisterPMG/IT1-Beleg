@@ -11,7 +11,7 @@
 	    	
 			<!-- Beginn Navigation -->
 			<nav>
-				<ul>
+				<ul id="index">
 					<li> <a href="index.php">Home / Suche</a> </li>
 					<li> <a href="index.php?View=ListAll">Anzeigen</a> </li>
 					<li> <a href="index.php?View=Create">Anlegen</a> </li>
