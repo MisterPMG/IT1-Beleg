@@ -13,7 +13,11 @@
 			if( is_array($data)) {extract ($data);}
 			if( count( $zeit ) ) {
 				foreach ($zeit as $row) {
-				echo "<li><div class=\"list_schulung\">". $row[3]."</div><div class=\"list_von\">" . $row[1]. "</div><div class=\"list_bis\">". $row[2]."</div></li>";}
+				echo "<li><div class=\"list_schulung\">". $row[3]."</div><div class=\"list_von\">" . $row[1]. "</div><div class=\"list_bis\">". $row[2]."</div>";
+				echo "<form action=\"index.php?View=Training&id=".$row[0]."\" method=\"POST\" >";
+				echo "<input type=\"submit\" name=\"x\" value=\"x\" />";
+				echo "</form></li>";
+				}			
 			} else {
 				echo "Keine Ergebnisse vorhanden.";
 			}

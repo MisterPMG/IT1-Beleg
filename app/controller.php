@@ -90,6 +90,11 @@
            //schulung anlegen
            function EditTraining()
            {
+           				if(isset($_POST['x']))
+           				{
+           					$STH = $this->model->deleteTraining();
+           					echo "Schulung wurde gelöscht";
+           				}
            				if(isset($_POST['Anlegen']))
            				{
            					$STH = $this->model->insertTraining();

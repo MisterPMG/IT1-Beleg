@@ -11,8 +11,10 @@
 		<?php
 			if( is_array($data)) {extract ($data);}
 			if( count( $anrede ) ) {
-					foreach ($anrede as $row) {
-						echo "<li><div class=\"list_id\">". $row[0]."</div><div class=\"list_anrede\">" . $row[1]. "</div></li>";}
+					foreach ($anrede as $row) 
+					{
+						echo "<li><div class=\"list_id\">". $row[0]."</div><div class=\"list_anrede\">" . $row[1]. "</div></li>";
+					}
 			} else {
 						echo "Keine Ergebnisse vorhanden.";
 			}

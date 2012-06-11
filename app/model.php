@@ -56,6 +56,14 @@
                    		$STH =$this -> DBH -> query ("SELECT * FROM kunde where kunde_id=$id");
                    		return $STH;
                    }
+                   
+                   //schulung anlegen
+                   public function deleteTraining()
+                   {
+                   		$id=$_GET['id'];
+                   		$STH=$this-> DBH -> query ("DELETE FROM zeitraum WHERE id=$id");
+                   		return $STH;
+                   }
         		   
         		   //abrufen aller kundendaten
                    public function getAllClients()
@@ -101,7 +109,7 @@
 		                   	$STH = $this-> DBH -> query ("insert into branche(branche) values ('$branche')");
 		                   	return $STH;
                    }
-                   
+            
                    //anlegen von schulungen
                    public function insertTraining()
                    {
