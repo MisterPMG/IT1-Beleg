@@ -9,7 +9,7 @@
 }
 
 header {
-        background: #C0C0C0;
+        background: #ccc;
 }
 
 #list{
@@ -17,6 +17,10 @@ header {
 	margin:0;
 	padding:0;
 	font:14px Arial, Helvetica, Geneva, sans-serif;
+}
+
+#list li{
+	padding-top: 5px;
 }
 
 #list li.head div{
@@ -30,17 +34,21 @@ header {
 }
 
 
-#list li div.list_button{width:50px;}
+#list li div.list_button{width:50px;padding-top:10px;}
+
 #list li div.list_vorname{width:150px;}
 #list li div.list_name{width:150px;}
+
 #list li div.list_schulung{width:150px;}
 #list li div.list_von{width:150px;}
 #list li div.list_bis{width:150px;}
+
 #list li div.list_id{width:150px;}
 #list li div.list_anrede{width:150px;}
 #list li div.list_branche{width:150px;}
-#list li div.list_label{width:50%;}
-#list li div.list_input{width:50%;}
+
+#list li div.list_label{position:absolute;width:150px;left:20px;}
+#list li div.list_input{position:absolute;width:150px;left:250px;}
 
 
 

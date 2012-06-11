@@ -18,8 +18,8 @@
 			}
 		?>
 		<li>
-			<div class="list_id"><input type="submit" name="Anlegen" value="Anlegen" /></div>
-			<div class="list_branche"><input type="text" name="Branche" id="branche" /></div>
+			<div class="list_branche"><input type="submit" name="Anlegen" value="Anlegen" /></div>
+			<div class="list_id"><input type="text" name="Branche" id="branche" /></div>
 		</li>
 	</ul>
 </form>

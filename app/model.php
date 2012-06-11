@@ -26,13 +26,45 @@
                 }
 
                 #METHODEN
+                
+                	public function updateClient()
+                	{
+                		$anrede=$_POST['Anrede'];
+	                   	$name=$_POST['Name'];
+	                   	$vorname=$_POST['Vorname'];
+	                   	$firma=$_POST['Firma'];
+	                   	$adresse=$_POST['Adresse'];
+	                   	$telefon=$_POST['Telefon'];
+	                   	$mobil=$_POST['Mobil'];
+	                   	$fax=$_POST['Fax'];
+	                   	$email=$_POST['Email'];
+	                   	$branche=$_POST['Branche'];
+	                   	$homepage=$_POST['www'];
+	                   	$position=$_POST['Position'];
+	                   	$abteilung=$_POST['Abteilung'];
+	                   	$zeitraum=$_POST['Zeitraum'];
+	                   	$zusatz=$_POST['Zusatz'];
+	                   	$id=$_GET['id'];
+                		$STH=$this-> DBH -> query ("UPDATE kunde SET name='$name',vorname='$vorname',anrede=$anrede,firma='$firma',adresse='$adresse',telefon='$telefon',mobil='$mobil',fax='$fax',email='$email',branche=$branche,homepage='$homepage',position='$position',abteilung='$abteilung',zeitraum=$zeitraum,zusatz='$zusatz' WHERE kunde_id=$id");
+                		return $STH;
+                	}
+                   
+                   //einen kunden anzeigen
+                   public function getClient()
+                   {
+                   		$id=$_GET['id'];
+                   		$STH =$this -> DBH -> query ("SELECT * FROM kunde where kunde_id=$id");
+                   		return $STH;
+                   }
         		   
+        		   //abrufen aller kundendaten
                    public function getAllClients()
                    {
-                           $STH = $this -> DBH -> query( 'SELECT vorname, name FROM kunde' );
+                           $STH = $this -> DBH -> query( 'SELECT * FROM kunde' );
                            return $STH;
                    }
 
+				   //anlegen eines kunden
                    public function insertNewClient()
                    {      
 		                   	$anrede=$_POST['Anrede'];
@@ -54,6 +86,7 @@
                         	return $STH;
                    }
                    
+                   //anlegen einer anrede
                    public function insertTitle()
                    {
                    			$anrede=$_POST['Anrede'];
@@ -61,6 +94,7 @@
                    			return $STH;
                    }
                    
+                   //anlegen der branche
                    public function insertBranche()
                    {
 		                   	$branche=$_POST['Branche'];
@@ -68,6 +102,7 @@
 		                   	return $STH;
                    }
                    
+                   //anlegen von schulungen
                    public function insertTraining()
                    {
                    		$schulung=$_POST['Schulung'];
@@ -77,6 +112,7 @@
                    		return $STH;
                    }
                    
+                   //funktion hohlt daten anrede, branche und zeitraum aus der db
                    public function showDetail()
                    {
 		                   	$anrede = $this -> DBH -> query('SELECT * FROM anrede');
